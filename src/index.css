@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #effffb;
+  background: #050914;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --nabhya-bg: #050914;
+  --nabhya-card: rgba(12, 25, 48, 0.78);
+  --nabhya-cyan: #48e7f5;
+  --nabhya-teal: #35e0b2;
+  --nabhya-purple: #a78bfa;
+  --nabhya-muted: #9aabc5;
+  --nabhya-border: rgba(112, 204, 255, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--nabhya-bg);
+  scroll-behavior: smooth;
+  scrollbar-color: #24566a #050914;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #effffb;
+  background:
+    radial-gradient(
+      ellipse at 75% 0%,
+      rgba(62, 105, 209, 0.18),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 0% 35%,
+      rgba(0, 224, 199, 0.09),
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 100% 75%,
+      rgba(124, 58, 237, 0.09),
+      transparent 30%
+    ),
+    linear-gradient(145deg, #050914, #071222 55%, #040914);
+
+  background-attachment: fixed;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--nabhya-cyan);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: rgba(72, 231, 245, 0.28);
+  color: white;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+/* Modern glass-card effect */
+.nabhya-card {
+  border: 1px solid var(--nabhya-border);
+  border-radius: 24px;
+  background: var(--nabhya-card);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.nabhya-card:hover {
+  border-color: rgba(72, 231, 245, 0.34);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.24);
+}
+
+/* Hero image container */
+.nabhya-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(130, 192, 255, 0.22);
+  border-radius: 28px;
+  background-color: #101b35;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(4, 10, 25, 0.96) 0%,
+      rgba(4, 10, 25, 0.78) 48%,
+      rgba(4, 10, 25, 0.12) 100%
+    ),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85");
+  background-position: center, center 45%;
+  background-size: cover;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.nabhya-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(5, 9, 20, 0.55),
+    transparent 65%
+  );
+  content: "";
+}
+
+/* Image panels */
+.nabhya-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+
+.nabhya-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #101b35;
+}
+
+.nabhya-image-wrap:hover .nabhya-image {
+  transform: scale(1.045);
+}
+
+/* Gradient headings */
+.nabhya-gradient-text {
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #8bf4f0 45%,
+    #9bc5ff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle entrance animation */
+@keyframes nabhya-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nabhya-animate-in {
+  animation: nabhya-rise 550ms ease both;
+}
+
+.nabhya-delay-1 {
+  animation-delay: 70ms;
+}
+
+.nabhya-delay-2 {
+  animation-delay: 140ms;
+}
+
+.nabhya-delay-3 {
+  animation-delay: 210ms;
+}
+
+/* SOS button */
+.nabhya-sos-button {
+  isolation: isolate;
+  animation: nabhya-sos-glow 2.8s ease-in-out infinite;
+}
+
+@keyframes nabhya-sos-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 28px rgba(255, 30, 50, 0.2),
+      0 18px 50px rgba(0, 0, 0, 0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 48px rgba(255, 30, 50, 0.38),
+      0 18px 50px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050914;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #050914;
+  border-radius: 20px;
+  background: #24566a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #347e91;
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .nabhya-hero {
+    border-radius: 22px;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(4, 10, 25, 0.94),
+        rgba(4, 10, 25, 0.58)
+      ),
+      url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80");
+    background-position: center, 60% center;
+  }
+
+  .nabhya-card {
+    border-radius: 20px;
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

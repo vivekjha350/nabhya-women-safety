@@ -1,0 +1,487 @@
+
+/* =========================================
+   NABHYA — FUTURISTIC WOMEN SAFETY THEME
+========================================= */
+
+#root {
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+:root {
+  --nb-cyan: #35eaff;
+  --nb-teal: #29f0c0;
+  --nb-purple: #a879ff;
+  --nb-pink: #ff43b8;
+  --nb-red: #ff3158;
+  --nb-border: rgba(53, 234, 255, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #fff;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    filter 200ms ease;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--nb-cyan);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   GLASS PANELS
+========================================= */
+
+.nabhya-card {
+  position: relative;
+  border: 1px solid rgba(65, 213, 255, 0.2);
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(12, 36, 70, 0.9),
+    rgba(5, 13, 32, 0.94)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 14px 36px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.nabhya-card:hover {
+  border-color: rgba(53, 234, 255, 0.5);
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(53, 234, 255, 0.08);
+}
+
+.nabhya-card:active {
+  transform: scale(0.99);
+}
+
+/* =========================================
+   HERO — CUSTOM BACKGROUND IMAGE
+   Image file: public/women-safety-bg.png
+========================================= */
+
+.nabhya-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(76, 222, 255, 0.34);
+  border-radius: 28px;
+
+  background-color: #07152e;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 10, 28, 0.94) 0%,
+      rgba(3, 10, 28, 0.82) 38%,
+      rgba(3, 10, 28, 0.48) 68%,
+      rgba(3, 10, 28, 0.30) 100%
+    ),
+    url("/women-safety-bg.png");
+
+  background-position: center, center 48%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.3),
+    inset 0 0 70px rgba(24, 115, 255, 0.08);
+}
+
+/* Subtle atmosphere without covering the photo */
+.nabhya-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(167, 121, 255, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(4, 10, 26, 0.28),
+      transparent 55%
+    );
+}
+
+/* Keep hero text and buttons above background */
+.nabhya-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   GRADIENT HEADING
+========================================= */
+
+.nabhya-gradient-text {
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #68efff 35%,
+    #a98aff 70%,
+    #ff71cf 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(77, 205, 255, 0.12));
+}
+
+/* =========================================
+   FEATURE IMAGES
+========================================= */
+
+.nabhya-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(53, 234, 255, 0.16);
+  border-radius: 20px;
+  background: #07152e;
+}
+
+.nabhya-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 400ms ease;
+}
+
+.nabhya-card:hover .nabhya-image {
+  transform: scale(1.04);
+  filter: saturate(1.1);
+}
+
+/* =========================================
+   CYBER GLOW UTILITIES
+========================================= */
+
+.nabhya-glow-cyan {
+  box-shadow:
+    0 0 0 1px rgba(53, 234, 255, 0.22),
+    0 0 22px rgba(53, 234, 255, 0.12);
+}
+
+.nabhya-glow-purple {
+  box-shadow:
+    0 0 0 1px rgba(168, 121, 255, 0.22),
+    0 0 24px rgba(168, 121, 255, 0.14);
+}
+
+.nabhya-glow-pink {
+  box-shadow:
+    0 0 0 1px rgba(255, 67, 184, 0.25),
+    0 0 25px rgba(255, 67, 184, 0.15);
+}
+
+.nabhya-neon-border {
+  border: 1px solid rgba(53, 234, 255, 0.45);
+  box-shadow:
+    inset 0 0 16px rgba(53, 234, 255, 0.035),
+    0 0 20px rgba(53, 234, 255, 0.07);
+}
+
+.nabhya-neon-button:hover {
+  border-color: rgba(53, 234, 255, 0.8);
+  box-shadow: 0 0 24px rgba(53, 234, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes nabhya-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nabhya-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes nabhya-sos-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(255, 49, 88, 0.24),
+      0 0 55px rgba(255, 49, 88, 0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 35px rgba(255, 49, 88, 0.5),
+      0 0 80px rgba(255, 49, 88, 0.16);
+  }
+}
+
+@keyframes nabhya-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.65;
+    transform: scale(0.92);
+  }
+}
+
+.nabhya-animate-in {
+  animation: nabhya-rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.nabhya-delay-1 {
+  animation-delay: 80ms;
+}
+
+.nabhya-delay-2 {
+  animation-delay: 160ms;
+}
+
+.nabhya-delay-3 {
+  animation-delay: 240ms;
+}
+
+.nabhya-pulse {
+  animation: nabhya-pulse 2s ease-in-out infinite;
+}
+
+/* =========================================
+   SOS BUTTON
+========================================= */
+
+.nabhya-sos-button {
+  position: relative;
+  isolation: isolate;
+  font-size: 72px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  border: 2px solid rgba(255, 190, 205, 0.65) !important;
+  background:
+    radial-gradient(
+      circle at 32% 22%,
+      rgba(255, 145, 167, 0.9),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #ff526f, #ed164d 58%, #a90036) !important;
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.35),
+    inset 0 -8px 18px rgba(88, 0, 30, 0.28),
+    0 0 0 9px rgba(255, 49, 88, 0.08),
+    0 0 0 18px rgba(255, 49, 88, 0.035),
+    0 0 35px rgba(255, 49, 88, 0.3);
+  animation: nabhya-sos-glow 2.6s ease-in-out infinite;
+}
+
+.nabhya-sos-button::before {
+  position: absolute;
+  z-index: -1;
+  inset: -12px;
+  border: 1px solid rgba(255, 91, 124, 0.35);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.nabhya-sos-button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.035);
+}
+
+.nabhya-sos-button:active {
+  transform: scale(0.97);
+}
+
+@media (min-width: 640px) {
+  .nabhya-sos-button {
+    font-size: 82px !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .nabhya-sos-button {
+    width: 210px !important;
+    height: 210px !important;
+    font-size: 68px !important;
+  }
+}
+
+/* =========================================
+   MAP / LEAFLET
+========================================= */
+
+.leaflet-container {
+  font-family: inherit;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+.safety-map-page {
+  position: relative;
+  z-index: 1;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  min-height: 400px;
+  overflow: hidden;
+  border: 1px solid rgba(53, 234, 255, 0.2);
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+}
+
+.safety-leaflet-map {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.safety-leaflet-map .leaflet-map-pane {
+  z-index: 1;
+}
+
+.safety-leaflet-map .leaflet-tile-pane {
+  z-index: 200;
+}
+
+.safety-leaflet-map .leaflet-overlay-pane {
+  z-index: 400 !important;
+}
+
+.safety-leaflet-map .leaflet-shadow-pane {
+  z-index: 500;
+}
+
+.safety-leaflet-map .leaflet-marker-pane {
+  z-index: 600 !important;
+}
+
+.safety-leaflet-map .leaflet-tooltip-pane {
+  z-index: 650;
+}
+
+.safety-leaflet-map .leaflet-popup-pane {
+  z-index: 700;
+}
+
+.safety-leaflet-map .leaflet-overlay-pane svg {
+  overflow: visible !important;
+}
+
+.safety-leaflet-map .leaflet-overlay-pane path {
+  vector-effect: non-scaling-stroke;
+}
+
+.safety-leaflet-map .leaflet-control-container {
+  position: relative;
+  z-index: 800;
+}
+
+.safety-leaflet-map .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+}
+
+.safety-leaflet-map .leaflet-popup-content {
+  margin: 12px 14px;
+}
+
+@media (max-width: 600px) {
+  .map-container {
+    height: 430px;
+    min-height: 350px;
+    border-radius: 18px;
+  }
+
+  .safety-leaflet-map {
+    min-height: 350px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 640px) {
+  .nabhya-hero {
+    min-height: 350px;
+    border-radius: 22px;
+    background-position: center, 58% center;
+    background-size: cover;
+  }
+
+  .nabhya-card {
+    border-radius: 20px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
